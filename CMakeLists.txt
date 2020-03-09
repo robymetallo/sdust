@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(sdust
+        HOMEPAGE_URL "https://github.com/lh3/sdust"
+        LANGUAGES C
         VERSION 0.1.1
         DESCRIPTION "Cmake for sdust library.")
 
