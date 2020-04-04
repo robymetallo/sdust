@@ -1,9 +1,12 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.12)
 project(sdust
         HOMEPAGE_URL "https://github.com/lh3/sdust"
         LANGUAGES C
         VERSION 0.1.1
         DESCRIPTION "Cmake for sdust library.")
+
+cmake_policy(VERSION 3.12)
+cmake_policy(SET CMP0076 NEW)
 
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "${default_build_type}" CACHE STRING
@@ -33,7 +36,8 @@ set_target_properties(sdust PROPERTIES
         C_STANDARD 99
         C_STANDARD_REQUIRED ON)
 
-target_sources(sdust PRIVATE sdust.c
+target_sources(sdust
+        PRIVATE sdust.c
         PUBLIC sdust.h)
 
 target_include_directories(sdust PRIVATE .)
